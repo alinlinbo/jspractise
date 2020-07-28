@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+谁调用就指向谁
+<script>
+    function fun() {
+        document.write(this.name)
+    }
+
+    var obj = {
+            name: '张三',
+            sayHi: fun
+        },
+        obj2 = {
+            name: '李四',
+            sayHi: fun
+        };
+    obj.sayHi();
+    obj2.sayHi();
+</script>
+</body>
+</html>

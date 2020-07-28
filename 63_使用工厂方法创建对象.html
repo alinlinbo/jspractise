@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用工厂2方法创建对象</title>
+</head>
+<body>
+<script>
+    function creatPerson(name,age,gender) {
+        var obj = {
+            name: name,
+            age: age,
+            gender:gender,
+            sayName:function () {
+                alert(this.name)
+            }
+        }
+        return obj;
+    }
+    var obj1 = creatPerson('张三',20,'男');
+    var obj2 = creatPerson('飒飒',18,'女');
+    obj1.sayName()
+    obj2.sayName()
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cell_apply</title>
+</head>
+<body>
+<script>
+    function fun(a,b) {
+        alert(arguments)//arguments是一个用来储存实参的类数组，可用索引
+        console.log(arguments.callee)//callee指向该函数
+    }
+    var obj = {
+        name:'nana'
+    }
+    fun.call(obj);//指定obj为函数的this
+    fun.apply(obj);//指定obj为函数的this
+    fun.call(obj,1,2)//实参在指定对象后面
+    fun.apply(obj,[1,2])//实参在指定对象后面，并为数组形式
+
+</script>
+</body>
+</html>

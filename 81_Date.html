@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+<script>
+    var d = new Date()
+    console.log(d)                      //输出执行时间
+    console.log(d.getDate())            //输入是几日
+    console.log(d.getDay())             //输出是周几
+    console.log(d.getFullYear())        //输出年份
+    console.log(d.getMonth())           //输出月份
+    console.log(d.getSeconds())         //输出秒
+    console.log(d.getTime())            //输出格林威治时间的1970/1/1零点零分到当前时间花费的毫秒
+    var start = Date.now()              //记录开始时间
+    var end = Date.now()                //记录结束时间
+    console.log(start-end)              //输出花费时间
+
+</script>
+</body>
+</html>

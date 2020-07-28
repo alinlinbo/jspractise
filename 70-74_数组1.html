@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组1</title>
+</head>
+<body>
+<h1>数组</h1>
+<p>
+    当向数组不连续的值时，会向断开的中间自动补齐空直<br/>
+<h5>修改数组的length</h5>
+修改后的length大于原length，自动补齐<br/>
+修改后的length小于原length，自动删除多出的<br/>
+<h5>向数组尾部添加值</h5>
+数组[数组.length] = 值
+<h5>数组的创建</h5>
+var arr = new Array()
+var arr1 =[]
+数组的值可以是任何数据类型
+</p>
+<h5>数组的方法</h5>
+push()<br/>
+向数组末尾添加一个或多个值，并返回数组的长度<br/>
+var arr = ['阿毛','二毛','三毛']<br/>
+arr.push('四毛','五毛')<br/>
+pop()<br/>
+删除数组的最后一个值，并返回删除的值<br/>
+arr.pop()<br/>
+arr.unshift(),向数组头部添加一个或多个值，并返回数组的长度<br/>
+arr.unshift('毛毛')<br/>
+arr.shift()，删除数组的第一个值，并返回删除的值<br/>
+arr.shift()<br/>
+<h5>数组的遍历</h5>
+<br/>
+
+<script>
+    //遍历练习,从perArr中提取出成年的放到一个新的数组中
+    function Person(name,age,gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    Person.prototype.sayHelloFun = function () {
+        alert(`打个招呼：hello我是${this.name}，我今年${this.age}，我是一个${this.gender}的`);
+        return (`Person[name=${this.name},age=${this.age}]`)
+
+    }
+    var person1 = new  Person('飒飒',18,'男');
+    var person2 = new  Person('金毛',16,'男');
+    var person3 = new  Person('小本',20,'男');
+    var person4 = new  Person('阿东',18,'男');
+    var person5 = new  Person('粒子',18,'男');
+    var perArr = [person1,person2,person3,person4,person5]
+    function getAdult(arr) {
+        var adultArr = [];
+        for (var i = 0; i<arr.length;  i++){
+            if (arr[i].age>=18){
+                adultArr.push(arr[i])
+            }
+        }
+        return adultArr
+    }
+    console.log(getAdult(perArr))
+
+</script>
+</body>
+</html>

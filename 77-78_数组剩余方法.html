@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组剩余方法</title>
+</head>
+<body>
+<script>
+    var arr = ['one','two','three','four','five'],
+        arr1 = ['six']
+    console.log(arr.concat(arr1))//不改变原数组
+    console.log(arr.join())
+    arr.reverse()//发转数组，对原数组有影响
+    arr.sort(function (a,b) {
+        return a-b;
+    })//对原数组有影响，根据u'nicodev编码排序
+
+
+</script>
+</body>
+</html>

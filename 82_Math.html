@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //封装了和数学相关的属性和方法
+    console.log(Math.ceil(1.2))                         //向上取整
+    console.log(Math.round(1.2))                        //向下取整
+    console.log(Math.abs(-1))                           //取绝对值
+    console.log(Math.random())                          //生成一个0-1的随机数
+    console.log(Math.round(Math.random()*10))           //生成一个0-10的随机整数
+             //生成一个2-10的随机整数
+    /*
+    * 生成一个x-y的随机数
+    * Math.round(Math.random()*(y-x)+x)
+    */
+    console.log(Math.round(Math.random()*9+1))          //生成1-10的随机数
+    /*
+    * max,返回多个数值的最大值
+    * min，返回多个数值的最小值
+    */
+    console.log(Math.max(10,11,40,1))
+    console.log(Math.min(10,11,40,1))
+    /*
+    *Math.pow(x,y),返回x的y次方
+    */
+    console.log(Math.pow(2,3))                          //返回2的三次方
+</script>
+</body>
+</html>

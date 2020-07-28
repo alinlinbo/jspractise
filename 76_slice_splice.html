@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slice\splice</title>
+</head>
+<body>
+<h4>slice()</h4>
+不影响原数组<br/>
+截取数组，两个参数分别指开始索引和结束索引，返回值包含开始不包含结束<br/>
+参数可以为负值-1为倒数第一个元素的索引，-2为倒数第二个元素的索引，以此类推<br/>
+如果只填2一个参数则截取从当前到最后<br/>
+<h4>splice()</h4>
+影响原数组
+第一个参数表示开始删除的索引，第二个参数表示删除的个数，第三个和往后的表示删除后要添加到删除位置的元素<br/>
+返回删除的元素
+<script>
+    var arr = ['one','two','three','four','five']
+    console.log(arr.slice(0,4))
+    console.log(arr.splice(0,2,'newOne','newOne2'))
+    console.log(arr)
+</script>
+</body>
+</html>

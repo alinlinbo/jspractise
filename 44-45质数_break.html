@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打印100以内质数，要求使用break、continue</title>
+</head>
+<body>
+<script >
+//以弹窗方式打印出输入数值以内的素数
+ var num = prompt("输入一个正整数")
+ var arr_su = [];
+ var sushu = true;
+ for(var i=2; i<=num; i++){
+
+     for (var j=2;j*j<=i;j++){
+         if (i%j==0){
+             sushu = false;
+             break;
+         }
+     }
+     if (sushu){
+         arr_su.push(i);
+     }
+     sushu = true;
+ }
+ alert(arr_su)
+</script>
+</body>
+</html>
