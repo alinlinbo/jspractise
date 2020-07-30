@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片切换</title>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        alert(111)
+        var imgSrc = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'],
+            next = document.getElementById("next"),
+            back = document.getElementById("back"),
+            index = 0;
+        var src = document.getElementsByTagName("img")[0].src
+        function next() {
+            alert(111)
+            index++
+           src = imgSrc[index]
+
+        }
+
+    }
+</script>
+<div>
+    <img src="img/1.jpg" height="591" width="476"/>
+    <button id="next" onclick="next()">下一张</button>
+    <button id="back">上一张</button>
+</div>
+</body>
+</html>

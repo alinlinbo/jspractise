@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的方法</title>
+</head>
+<body>
+在底层字符串是以数组形式保存的
+可以使用length属性获取字符串长度
+<script>
+    var a = 'hello Li';
+    console.log(a)
+    //a.charAt(0);                 //根据索引返回指定位置的字符
+    // a.charCodeAt(0);             //根据索引返回指定位置的字符的Unicode编码
+    //console.log(String.fromCharCode(2000));      //根据Unicode编码返回字符
+    //console.log(a.concat('陈美丽'));              //链接两个字符串，不对原字符串产生影响
+    /*检查字符串中是否含有指定字符，返回该字符的索引，没有则返回-1
+    *当字符串中有两个指定字符只返回第一个
+    *第二个参数为指定开始位置
+    * 顺序从前往后
+    * */
+    //console.log(a.indexOf('h',1));
+    /*与indexOf类似，顺序从后往前参数不能为负
+    * */
+    //console.log(a.lastIndexOf('i',1))
+    /*slice(),截取字符串
+    * 第一个参数为开始位置，包括开始
+    * 第二个参数为结束的位置，不包括结束
+    * 可以为负数，负数表示从后边开始计算
+    * 省略第二个参数，会截取到最后*/
+    //console.log(a.slice(1,-2))
+    /*substring(),截取字符串
+    * 第一个参数为开始位置，包括开始
+    * 第二个参数为结束的位置，不包括结束
+    * 不可以为负数
+    * 当第一个参数小于第二个参数，则自动交换*/
+    //console.log(a.substring(4,2))
+    /*substr(),截取字符串
+    * 第一个参数表示开始的位置，包括开始
+    * 第二个位置表示截取的长度
+    * 不可以为负数*/
+    console.log(a.substr(1,2))
+    /*split()将字符串拆分为数组，参数为拆分点
+    * 不对原字符串产生影响*/
+    console.log(a.split(' '))
+</script>
+</body>
+</html>

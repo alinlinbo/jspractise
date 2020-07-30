@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM查询</title>
+</head>
+<body>
+
+<ul id="city">
+    <li id="bj">北京</li>
+    <li>上海</li>
+    <li id="gz">广州</li>
+    <li>深圳</li>
+</ul>
+<button id="getCity" onclick="getCity()"></button>
+<script>
+    var city = document.getElementById("city");
+    //获取city下的所有li节点
+    var cityList = city.getElementsByTagName("li");
+    //返回元素的所有节点，包括空白
+    console.log(city.childNodes)
+    //返回元素的子节点
+    console.log(city.children)
+    //返回元素的第一个子节点，包括空白
+    console.log(city.firstChild)
+    //返回元素的最后一个子节点,包括空白
+    console.log(city.lastChild )
+    var bj = document.getElementById("bj"),
+        gz = document.getElementById("gz")
+    //返回元素的父节点,
+    console.log(bj.parentNode);
+    //返回元素的前一个兄弟节点，野可能获取到空白文本
+    console.log(gz.previousSibling)
+    //返回元素的前一个兄弟节点，不获取空白文本
+    console.log(gz.previousElementSibling)
+
+</script>
+</body>
+</html>

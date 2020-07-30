@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM增删改</title>
+</head>
+<body>
+
+<div>
+    <ul id="city">
+        <li id="bj">北京</li>
+        <li>上海</li>
+    </ul>
+    <button id="addGzBtn" onclick="addGz()">增加广州</button>
+    <button id="addGzBeforeBjBtn" onclick="addGzBeforeBj()">在吧北京前增加广州</button>
+    <button id="GzReplaceBtn" onclick="GzReplaceBj()">广州替换北京</button>
+    <button id="removeBjBtn" onclick="removeBj()">删除北京</button>
+</div>
+<script>
+    var city = document.getElementById("city"),
+        bj = document.getElementById("bj");
+
+    function addGz() {
+        var li = document.createElement("li");
+        li.innerHTML = "广州";
+        city.appendChild(li)
+    }
+    function addGzBeforeBj() {
+        var li = document.createElement("li");
+        li.innerHTML = "广州";
+        city.insertBefore(li,bj);
+    }
+    function GzReplaceBj() {
+        var li = document.createElement("li");
+        li.innerHTML = "广州";
+        city.replaceChild(li,bj);
+    }
+    function removeBj() {
+        city.removeChild(bj)
+    }
+
+
+</script>
+</body>
+</html>

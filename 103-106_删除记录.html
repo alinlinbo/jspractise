@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除记录</title>
+    <style>
+        table, table tr td{
+            border: 1px solid #151515
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Tom</td>
+        <td>133@11.com</td>
+        <td><a href="javaScript:">delete</a></td>
+    </tr>
+    <tr>
+        <td>Jone</td>
+        <td>133@11.com</td>
+        <td><a href="javaScript:">delete</a></td>
+    </tr>
+    <tr>
+        <td>Marc</td>
+        <td>133@11.com</td>
+        <td><a href="javaScript:">delete</a></td>
+    </tr>
+</table>
+<script>
+    var a = document.getElementsByTagName("a");
+    for (var i = 0;i<a.length;i++){
+        a[i].onclick = function () {
+            var tr = this.parentNode.parentNode;
+            var name = tr.getElementsByTagName("td")[0].innerText
+            if (confirm(`确定删除${name}`)){
+                tr.parentNode.removeChild(tr);
+            }
+        }
+    }
+</script>
+</body>
+</html>

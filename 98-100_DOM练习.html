@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM练习</title>
+</head>
+<body>
+<div>
+    你喜欢的运动是：<input type="checkbox" id="allAndNoOne" />全选/全不选<br/>
+    <input type="checkbox" name="items" value="跑步"/>跑步
+    <input type="checkbox" name="items" value="武术"/>武术
+    <input type="checkbox" name="items" value="游泳"/>游泳
+    <input type="checkbox" name="items" value="爬山"/>爬山<br/>
+    <button id="selectAll">全选</button>
+    <button id="selectNo">全不选</button>
+    <button id="selectRev">反选</button>
+    <button id="submit">提交</button>
+
+
+</div>
+
+<script>
+    var items = document.getElementsByName("items")
+    var allAndNoOne = document.getElementById("allAndNoOne")
+    document.getElementById("selectAll").onclick = function () {
+        for (var i=0;i<items.length;i++){
+            items[i].checked = true;
+        }
+        allAndNoOne.checked = true;
+    }
+    document.getElementById("selectNo").onclick = function () {
+        for (var i=0;i<items.length;i++){
+            items[i].checked = false;
+        }
+        allAndNoOne.checked = false;
+    }
+    document.getElementById("selectRev").onclick = function () {
+        for (var i=0;i<items.length;i++){
+            items[i].checked = !items[i].checked;
+        }
+
+    }
+    document.getElementById("submit").onclick = function () {
+        for (var i=0;i<items.length;i++){
+            if(items[i].checked){
+                alert(items[i].value)
+            }
+        }
+    }
+    document.getElementById("allAndNoOne").onclick = function () {
+        for (var i=0;i<items.length;i++){
+                items[i].checked = !items[i].checked;
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

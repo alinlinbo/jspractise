@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM剩余查询方法</title>
+</head>
+<body>
+<div class="box">
+    <div></div>
+    <div></div>
+</div>
+<script>
+
+    window.onload = function () {
+        //拿到body标签
+        //console.log(document.body);
+        //拿到html标签
+        //console.log(document.documentElement)
+        //根据属性值获取节点,ie9以上浏览器才支持
+        //console.log(document.getElementsByClassName("box"))
+        //使用选择器获取节点，以数组形式存取
+        console.log(document.querySelectorAll(".box div"))
+
+    }
+
+</script>
+</body>
+</html>
