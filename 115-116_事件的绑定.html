@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的绑定</title>
+</head>
+<body>
+<button id="btn115">我有不止一个点击事件</button>
+<script>
+    //addEventListener()可以为一个元素同时绑定多个相同的事件，相应函数按照顺序执行
+    var btn115 = document.getElementById("btn115");
+    function bind(obj,eventStr,callback) {
+        if(obj.addEventListener){
+            obj.addEventListener(eventStr,callback,false);
+        }else{
+            obj.attachEvent("on"+callback,function (callback) {
+                callback.call(obj);
+            })
+        }
+    }
+    bind(btn115,"click",function () {
+        alert("111")
+    })
+</script>
+</body>
+</html>

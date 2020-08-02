@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的操作</title>
+    <style>
+        .b1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .b2 {
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        var box137 = document.getElementById("box137"),
+            btn137 = document.getElementById("btn137");
+
+        function hsaClass(obj, cn) {
+            var reg137 = new RegExp(`\\b${cn}\\b`);
+            return reg137.test(obj.className);
+        }
+
+        function addClass(obj, cn) {
+            var reg137 = new RegExp(`\\b${cn}\\b`);
+            if (!reg137.test(obj.className)) {
+                obj.className += " " + cn;
+            }
+        }
+
+        function move(obj, cn) {
+            var reg137 = new RegExp(`\\b${cn}\\b`);
+            if(reg137.test(obj.className)){
+                obj.className = obj.className.replace(reg137,"")
+            }
+        }
+        //切换类
+        function toggleClass(obj,cn){
+            if (hsaClass(obj,cn)){
+                move(obj,cn)
+            }else {
+                addClass(obj,cn)
+            }
+        }
+
+        btn137.onclick = function () {
+            toggleClass(box137,"b2")
+        }
+
+    }
+</script>
+<button id="btn137">点击改变样式</button>
+<div id="box137" class="b1 b2">
+</div>
+
+</body>
+</html>

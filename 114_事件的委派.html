@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的委派</title>
+</head>
+<body>
+<button id="addABtn114">添加超链接</button>
+<ul id="ul114">
+    <li><a href="javascript:;" class="link">超链接一</a></li>
+    <li><a href="javascript:;" class="link">超链接一</a></li>
+    <li><a href="javascript:;" class="link">超链接一</a></li>
+</ul>
+<script>
+
+    var ul114 = document.getElementById("ul114"),
+        addABtn114 = document.getElementById("addABtn114");
+    addABtn114.onclick = function(){
+        var li = document.createElement("li");
+        li.innerHTML = `<a href="javascript:;" class="link">新添加的超链接一</a>`;
+        ul114.appendChild(li);
+    }
+    ul114.onclick = function (event) {
+        event = event || window.event;
+        if (event.target.className == 'link'){
+            alert('我是ul的单机相应函数')
+        }
+
+    }
+</script>
+</body>
+</html>

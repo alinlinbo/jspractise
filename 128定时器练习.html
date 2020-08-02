@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器练习</title>
+</head>
+<body>
+
+<img id="img1" src="img/1.jpg" height="591" width="476"/></body>
+<button id="change">切换</button><br/>
+<button id="shop">停止</button>
+<script>
+    var change = document.getElementById("change"),
+        img1 = document.getElementById("img1"),
+        imgArr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'],
+        index = 0,
+        shop = document.getElementById("shop"),
+        timer;
+    change.onclick = function () {
+        clearInterval(timer)
+        timer = setInterval(function () {
+            index++;
+            index = index % imgArr.length;
+            img1.src = imgArr[index];
+
+        },1000)
+    }
+    shop.onclick = function () {
+        clearInterval(timer)
+    }
+</script>
+</html>

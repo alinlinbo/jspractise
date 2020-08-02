@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式相关属性</title>
+    <style>
+        div{
+            background-color: green;
+            width: 200px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    看看我是什么颜色<br/>
+    我有多宽
+</div>
+<button id="checkStyle">点我看样式</button>
+<script>
+    var box1 = document.getElementById("box1"),
+        checkStyleBtn = document.getElementById("checkStyle");
+    checkStyleBtn.onclick = function () {
+        if (window.getComputedStyle){
+            alert(box1.clientWidth)
+            alert(getComputedStyle(box1,null)["width"]);
+        }else {
+            alert(box1.currentStyle["width"]);
+        }
+
+    }
+</script>
+</body>
+</html>

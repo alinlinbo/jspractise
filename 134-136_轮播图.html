@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer134{
+            width: 520px;
+            height: 333px;
+            margin: 50px auto;
+            background-color: chartreuse;
+            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #imgList134{
+            list-style: none;
+            /*设置绝对定位*/
+            position: absolute;
+            /*u设置偏移量*/
+            left: 0;
+        }
+        ul li{
+            float: left;
+            margin: 0 10px;
+        }
+        ul li img{
+            width: 500px;
+            height: 333px;
+        }
+        #navDiv134{
+            position: absolute;
+            bottom: 15px;
+        }
+        #navDiv134 a{
+            float: left;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            opacity: 0.5;
+            margin: 0 5px;
+        }
+        #navDiv134 a:hover{
+            background-color: #151515;
+        }
+    </style>
+    <script src="js/tools.js"></script>
+</head>
+<body>
+<div id="outer134">
+    <ul id="imgList134">
+        <li><img src="img/1.jpg"/></li>
+        <li><img src="img/2.jpg"/></li>
+        <li><img src="img/3.jpg"/></li>
+        <li><img src="img/4.jpg"/></li>
+        <li><img src="img/5.jpg"/></li>
+        <li><img src="img/1.jpg"/></li>
+    </ul>
+    <div id="navDiv134">
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+        <a href="javascript:;"></a>
+    </div>
+</div>
+<script>
+
+    window.onload = function () {
+        var imgList134 = document.getElementById("imgList134"),
+            img = document.getElementsByTagName(("img")),
+            navDiv134 = document.getElementById("navDiv134"),
+            outer134 = document.getElementById("outer134"),
+            index134 = 0,
+            /*给自动轮播添加标识*/
+            autoChangeTimer,
+            aArr = document.getElementsByTagName("a");
+        imgList134.style.width = 520*img.length+"px";
+        navDiv134.style.left = (outer134.offsetWidth - navDiv134.offsetWidth)/2 + "px";
+        aArr[index134].style.backgroundColor = "#151515";
+        autoChange();
+        /*点击超链接显示图片*/
+        for (var i = 0;i<=aArr.length; i++){
+            aArr[i].num = i;
+            aArr[i].onclick = function () {
+                clearInterval(autoChangeTimer)
+                index134 = this.num
+                setA();
+                //imgList134.style.left = -520 * this.num + "px";
+                move(imgList134,"left",-520*index134,30,function () {
+                    autoChange();
+                })
+            }
+        }
+
+        //创建一个方法设置选中的a
+        function setA() {
+            if (index134>=img.length-1){
+                index134 = 0;
+                imgList134.style.left = 0;
+            }
+            for(var i = 0;i < aArr.length; i++){
+                aArr[i].style.backgroundColor = "";
+            }
+            console.log()
+            aArr[index134].style.backgroundColor = "#151515"
+
+        }
+        //自动播放
+        function autoChange() {
+            autoChangeTimer = setInterval(function () {
+                index134++;
+                console.log(index134)
+                index134 = index134 % img.length;
+                move(imgList134,"left",-520*index134,30,function () {
+                    setA()
+                })
+            },3000)
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
